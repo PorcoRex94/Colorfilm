@@ -33,6 +33,15 @@ export const ContactGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
   margin-bottom: 60px;
+  padding: 2rem;
+
+  @media (max-width: 926px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ContactCard = styled(motion.a)`
@@ -76,5 +85,9 @@ export const MapContainer = styled.div`
     height: 100%;
     border: none;
     border-radius: 12px;
+  }
+
+  @media (max-width: 1050px) {
+    padding: 2rem 1.5rem;
   }
 `;

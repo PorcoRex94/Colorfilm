@@ -6,6 +6,10 @@ export const FooterWrapper = styled.footer`
   color: #ccc;
   text-align: center;
   position: relative;
+
+  @media (max-width: 1300px) {
+    padding: 1rem 2rem;
+  }
 `;
 
 export const FooterGrid = styled.div`
@@ -17,9 +21,31 @@ export const FooterGrid = styled.div`
 
   .logo {
     position: relative;
-    right: 50px;
+    top: 30px;
+    right: 80px;
     width: 350px;
     height: auto;
+  }
+
+  @media (max-width: 960px) {
+    .logo {
+      right: 0;
+      width: 280px;
+    }
+
+    @media (max-width: 810px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      .logo {
+        top: 0;
+        width: 300px;
+      }
+    }
+    @media (max-width: 500px) {
+      .logo {
+        width: 250px;
+      }
+    }
   }
 `;
 
