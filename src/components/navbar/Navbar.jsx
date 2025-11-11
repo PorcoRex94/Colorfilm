@@ -99,7 +99,7 @@ export const Navbar = () => {
       <NavContainer>
         <Link to="/" className="nav__logo">
           <img
-            src="/assets/imgs/logos/logo-colorfilm.svg"
+            src="/assets/imgs/logos/colorfilm__logo_dos.webp"
             alt="Logo Colorfilm"
             className="img__logo"
           />

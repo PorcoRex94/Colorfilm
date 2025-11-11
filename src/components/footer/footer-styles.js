@@ -17,7 +17,9 @@ export const FooterGrid = styled.div`
 
   .logo {
     position: relative;
-    top: 50px;
+    right: 50px;
+    width: 350px;
+    height: auto;
   }
 `;
 

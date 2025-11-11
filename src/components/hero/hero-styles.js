@@ -66,28 +66,38 @@ export const HeroContent = styled.div`
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   color: white;
 
-  @media (max-width: 768px) {
-    padding: 1.5rem;
-    max-width: 90%;
+  @media (max-width: 800px) {
+    min-width: 450px;
+  }
+
+  @media (max-width: 500px) {
+    min-width: 300px;
   }
 `;
 
 export const Title = styled.h1`
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-size: 3.5rem;
   line-height: 1.2;
-  margin-bottom: 1rem;
-  color: #ff822f;
+  margin-bottom: 1.2rem;
+  color: #e9620b;
+  span {
+    color: var(--negro);
+    font-weight: bold;
+    padding-right: 0.3rem;
+  }
+
+  @media (max-width: 960px) {
+    font-size: 3rem;
+  }
 `;
 
 export const BulletList = styled.ul`
   list-style: none;
-  padding: 0;
-  margin: 1rem 0 2rem 0;
+  padding: 1.5rem;
   color: white;
   li {
     font-size: 1.2rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     gap: 0.5rem;
@@ -96,12 +106,6 @@ export const BulletList = styled.ul`
       content: "•";
       color: #1f83c1;
       font-weight: bold;
-    }
-  }
-
-  @media (max-width: 768px) {
-    li {
-      font-size: 1rem;
     }
   }
 `;
@@ -115,6 +119,7 @@ export const CtaRow = styled.div`
   @media (max-width: 600px) {
     flex-direction: column;
     gap: 0.7rem;
+    align-items: center;
   }
 `;
 
@@ -204,6 +209,10 @@ export const ArrowLeft = styled.button`
 
   @media (max-width: 600px) {
     font-size: 1.5rem;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 1rem;
   }
 `;
 

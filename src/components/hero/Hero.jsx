@@ -7,27 +7,27 @@ import {
   BulletList,
   CtaRow,
   PrimaryBtn,
-  SecondaryBtn,
   IndicatorsBar,
   Dot,
   Overlay,
   ArrowLeft,
   ArrowRight,
   BackgroundLayer,
+  Title,
 } from "./hero-styles";
 
 const rubros = [
   {
     title: "Preimpresión",
-    bullets: ["CTP placas térmicas", "Películas HD", "Preflight de archivos"],
+    bullets: ["CTP placas térmicas", "Preflight de archivos", "Películas HD"],
     img: "/assets/imgs/img/img-ctp.webp",
   },
   {
     title: "Gigantografía",
     bullets: [
       "Roll-ups y porta-banners",
-      "Vinilo impreso/corte",
       "Lonas front/backlight",
+      "Vinilo impreso/corte",
     ],
     img: "/assets/imgs/img/gigantografia-img.webp",
   },
@@ -58,6 +58,7 @@ export default function HeroSlider() {
 
   return (
     <Section>
+      {/* Fondo animado */}
       <BackgroundLayer
         as={motion.div}
         key={rubros[index].title}
@@ -78,7 +79,6 @@ export default function HeroSlider() {
               key={r.img}
               style={{ position: "absolute", inset: 0, overflow: "hidden" }}
             >
-              {/* Láminas animadas */}
               {[...Array(8)].map((_, j) => (
                 <motion.div
                   key={j}
@@ -95,10 +95,9 @@ export default function HeroSlider() {
                   initial={{ x: j % 2 === 0 ? "-100%" : "100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: j % 2 === 0 ? "100%" : "-100%", opacity: 0 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }} // ⚡ misma velocidad
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
                 />
               ))}
-              {/* Imagen completa encima para tapar las líneas */}
               <motion.img
                 src={r.img}
                 alt={r.title}
@@ -116,7 +115,7 @@ export default function HeroSlider() {
                 transition={{
                   duration: 0.4,
                   ease: "easeOut",
-                  delay: 0.5, // ⏱ entra un poquito antes que terminen las láminas
+                  delay: 0.5,
                 }}
               />
             </motion.div>
@@ -131,9 +130,19 @@ export default function HeroSlider() {
           key={index}
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.9, delay: 0.6 }} // 🕒 espera hasta que la imagen aparece
+          transition={{ duration: 1.9, delay: 0.6 }}
         >
-          {/* 🖨️ Título con efecto de impresión */}
+          {/* 🧭 H1 principal del sitio */}
+          <Title
+            as={motion.h1}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <span>Color</span>film
+          </Title>
+
+          {/* 🖨️ Rubro actual */}
           <motion.h2
             initial={{ opacity: 0, x: -30 }}
             animate={{
@@ -164,13 +173,11 @@ export default function HeroSlider() {
           </BulletList>
 
           <CtaRow>
-            <PrimaryBtn href="#contacto">Pedir cotización</PrimaryBtn>
-            <SecondaryBtn href="/subir-archivo">Ver más...</SecondaryBtn>
+            <PrimaryBtn href="/subir-archivo">VER MÁS...</PrimaryBtn>
           </CtaRow>
         </HeroContent>
       </Container>
 
-      {/* Dots y flechas */}
       <IndicatorsBar>
         {rubros.map((_, i) => (
           <Dot key={i} $active={i === index} onClick={() => setIndex(i)} />
@@ -179,7 +186,6 @@ export default function HeroSlider() {
       <ArrowLeft onClick={() => setIndex(prevSlide())}>❮</ArrowLeft>
       <ArrowRight onClick={() => setIndex(nextSlide())}>❯</ArrowRight>
 
-      {/* Overlay drag */}
       <Overlay
         as={motion.div}
         drag="x"

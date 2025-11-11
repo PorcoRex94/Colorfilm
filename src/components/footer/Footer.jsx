@@ -40,12 +40,20 @@ export const Footer = () => {
   return (
     <FooterWrapper>
       <FooterGrid>
-        <FooterCol className="logo">
+        <Link
+          to="/"
+          className="nav__link"
+          onClick={() => {
+            toggleMenu();
+            closeMenu();
+          }}
+        >
           <img
-            src="/assets/imgs/logos/logo-colorfilm.svg"
+            src="/assets/imgs/logos/colorfilm__logo_dos.webp"
             alt="Logo colorfilm"
+            className="logo"
           />
-        </FooterCol>
+        </Link>
 
         <FooterCol>
           <ul>
