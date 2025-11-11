@@ -6,6 +6,10 @@ export const Section = styled.section`
   width: 100%;
   height: 80vh;
   overflow: hidden;
+
+  @media (max-width: 500px) {
+    height: 82vh;
+  }
 `;
 
 export const BgImage = styled.img`
