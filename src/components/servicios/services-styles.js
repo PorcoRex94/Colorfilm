@@ -140,11 +140,11 @@ export const CardContent = styled.div`
   }
 
   @media (max-width: 500px) {
-    left: 14%;
+    left: 13%;
   }
 
   @media (max-width: 450px) {
-    left: 9%;
+    left: 4%;
   }
 `;
 export const Btn = styled(Link)`
