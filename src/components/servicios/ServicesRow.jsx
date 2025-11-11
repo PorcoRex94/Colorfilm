@@ -57,7 +57,7 @@ const trabajos = [
     path: "/preimpresion",
   },
   {
-    title: "Offset Digital",
+    title: "Offset/Digital",
     img: "/assets/imgs/img/offset-img.webp",
     path: "/offsetdigital",
   },

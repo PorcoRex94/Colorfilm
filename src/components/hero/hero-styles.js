@@ -8,7 +8,7 @@ export const Section = styled.section`
   overflow: hidden;
 
   @media (max-width: 500px) {
-    height: 82vh;
+    height: 85vh;
   }
 `;
 
